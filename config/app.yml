@@ -1,2 +1,13 @@
 mysql:
   dns: root:123456@tcp(193.122.105.124:3306)/ginchat?charset=utf8mb4&parseTime=True&loc=Local
+redis:
+  addr: "193.122.105.124:6379"
+  password: ""
+  DB: 0
+  poolSize: 30
+  minIdleConn: 30
+oss:
+  Endpoint: "193.122.105.124:9000"
+  AccessKeyId: "NUUrwR0IXpoWtbKGX3Sm"
+  AccessKeySecret: "gGLkm0pJoKJ3WLtxQVoJr18dV0J0Ev71yuw6w24i"
+  Bucket : "ginchat"

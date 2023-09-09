@@ -18,10 +18,13 @@ Gin 是一个用 Go语言 (Golang) 编写的 Web 框架
 swagger是一套基于OpenAPI规范构建的开源工具，使用RestApi。swagger-ui 呈现出来的是一份可交互式的API文档，可以直接在文档页面尝试API的调用 
 更多用法：https://blog.csdn.net/qq_41630102/article/details/128411210
 
+6.govalidator "github.com/asaskevich/govalidator"
+数据验证
+翻译中文：https://blog.csdn.net/qq_42887507/article/details/120934568
 
 
 
-一、go mod 是什么？
+一、go mod 
 go modules 官方定义为：
 模块是相关Go包的集合。modules是源代码交换和版本控制的单元。
 go命令直接支持使用modules，包括记录和解析对其他模块的依赖性。modules替换旧的基于GOPATH的方法来指定在给定构建中使用哪些源文件。
@@ -53,11 +56,38 @@ go命令直接支持使用modules，包括记录和解析对其他模块的依�
 代码：go mod why
 查看为什么需要依赖某模块，查询某个不常见的模块是否是哪个模块的引用
 
-二.错误解决
+二.git
+git init
+//所有文件
+git add .
+git commit -m "first commit"
+git commit -m "更新"
+git branch -M main
+第一次
+git remote add origin git@github.com:Grajon101/ginchat.git
+git push -u origin main
+
+三.docker
+
+构建镜像
+docker build -t ginchat .
+
+运行容器
+docker run -d -p 8080:8081 --name mychat ginchat
+
+docker run -d --name minio \
+    --publish 9000:9000 \
+    --publish 9001:9001 \
+    --env MINIO_ROOT_USER="root" \
+    --env MINIO_ROOT_PASSWORD="19911106" \
+    bitnami/minio:latest
+
+
+三.错误解决
 1.
 gin + gin-swagger，swag init 命令执行错误 cannot find type definition
 需要加参数  swag init 命令后面添加两个参数 --parseDependency --parseInternal 
 如：swag init --parseDependency --parseInternal 
-或者简写 wag init --pd 
+或者简写 swag init --pd 
 2.
 

@@ -20,6 +20,10 @@ func main() {
 	db.AutoMigrate(&models.UserBasic{})
 
 	user := &models.UserBasic{}
+	//utils.InitMySQL()
+
+	//user = models.GetUserByNameAndPwd("abc", "123")
+
 	user.Name = "ball"
 	user.PassWord = "123456"
 	user.Phone = "1888888888"
