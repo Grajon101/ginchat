@@ -20,8 +20,7 @@ swagger是一套基于OpenAPI规范构建的开源工具，使用RestApi。swagg
 
 
 
-
-一、go mod 是什么？
+一、go mod 
 go modules 官方定义为：
 模块是相关Go包的集合。modules是源代码交换和版本控制的单元。
 go命令直接支持使用modules，包括记录和解析对其他模块的依赖性。modules替换旧的基于GOPATH的方法来指定在给定构建中使用哪些源文件。
@@ -53,7 +52,16 @@ go命令直接支持使用modules，包括记录和解析对其他模块的依�
 代码：go mod why
 查看为什么需要依赖某模块，查询某个不常见的模块是否是哪个模块的引用
 
-二.错误解决
+二.git
+git init
+//所有文件
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:Grajon101/ginchat.git
+git push -u origin main
+
+三.错误解决
 1.
 gin + gin-swagger，swag init 命令执行错误 cannot find type definition
 需要加参数  swag init 命令后面添加两个参数 --parseDependency --parseInternal 
