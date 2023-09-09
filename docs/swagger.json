@@ -1,0 +1,124 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "contact": {}
+    },
+    "paths": {
+        "/index": {
+            "get": {
+                "description": "返回首页",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "首页"
+                ],
+                "summary": "首页样例",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/uesr/getlist": {
+            "get": {
+                "description": "获取用户集合",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "用户"
+                ],
+                "summary": "获取用户",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.UserBasic"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "gorm.DeletedAt": {
+            "type": "object",
+            "properties": {
+                "time": {
+                    "type": "string"
+                },
+                "valid": {
+                    "description": "Valid is true if Time is not NULL",
+                    "type": "boolean"
+                }
+            }
+        },
+        "models.UserBasic": {
+            "type": "object",
+            "properties": {
+                "clientIp": {
+                    "type": "string"
+                },
+                "clientPort": {
+                    "type": "string"
+                },
+                "createdAt": {
+                    "type": "string"
+                },
+                "deletedAt": {
+                    "$ref": "#/definitions/gorm.DeletedAt"
+                },
+                "deviceInfo": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "heartBeatTime": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "identity": {
+                    "type": "string"
+                },
+                "isLogiut": {
+                    "type": "boolean"
+                },
+                "loginOutTime": {
+                    "type": "string"
+                },
+                "loginTime": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "passWord": {
+                    "type": "string"
+                },
+                "phone": {
+                    "type": "string"
+                },
+                "updatedAt": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

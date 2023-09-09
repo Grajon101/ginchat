@@ -1,0 +1,80 @@
+definitions:
+  gorm.DeletedAt:
+    properties:
+      time:
+        type: string
+      valid:
+        description: Valid is true if Time is not NULL
+        type: boolean
+    type: object
+  models.UserBasic:
+    properties:
+      clientIp:
+        type: string
+      clientPort:
+        type: string
+      createdAt:
+        type: string
+      deletedAt:
+        $ref: '#/definitions/gorm.DeletedAt'
+      deviceInfo:
+        type: string
+      email:
+        type: string
+      heartBeatTime:
+        type: string
+      id:
+        type: integer
+      identity:
+        type: string
+      isLogiut:
+        type: boolean
+      loginOutTime:
+        type: string
+      loginTime:
+        type: string
+      name:
+        type: string
+      passWord:
+        type: string
+      phone:
+        type: string
+      updatedAt:
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /index:
+    get:
+      consumes:
+      - application/json
+      description: 返回首页
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+      summary: 首页样例
+      tags:
+      - 首页
+  /uesr/getlist:
+    get:
+      consumes:
+      - application/json
+      description: 获取用户集合
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.UserBasic'
+            type: array
+      summary: 获取用户
+      tags:
+      - 用户
+swagger: "2.0"
